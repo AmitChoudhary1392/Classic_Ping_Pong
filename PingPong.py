@@ -129,3 +129,25 @@ while True:
         ball.sety(-290)
         ball.dy = ball.dy * -1
 
+    # to bounce if hits the right hand limit of window
+    if ball.xcor()>390:
+        # reset ball position and change direction
+        ball.goto(0,0)
+        ball.dx = ball.dx * -1   
+    
+    # to bounce if hits the left hand limit of window
+    elif ball.xcor()<-390:
+        # reset ball position and change direction
+        ball.goto(0,0)
+        ball.dx = ball.dx * -1
+
+    ### Interaction of ball with Paddles
+    #### bounce the ball when it hits the paddle
+    if (-350<ball.xcor()<-340) and ball.ycor()< Paddle_L.ycor() + 50 and ball.ycor()> Paddle_L.ycor() - 50:
+        ball.dx = ball.dx * -1
+    
+    if (340<ball.xcor()<350) and ball.ycor()< Paddle_R.ycor() + 50 and ball.ycor()> Paddle_R.ycor() - 50:
+        ball.dx = ball.dx * -1
+
+
+
