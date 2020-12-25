@@ -103,6 +103,20 @@ window.onkeypress(Paddle_L_Down, "s")
 window.onkeypress(Paddle_R_Up, "Up")        # using Arrow keys
 window.onkeypress(Paddle_R_Down, "Down")
 
+# Initiate Score variables
+score_a = 0
+score_b = 0
+
+# Initiate Turtle object to display scores
+pen = turtle.Turtle()
+pen.speed(0)
+pen.color("white")
+pen.penup()
+pen.hideturtle()            # hide the turtle, no requirement to see movement
+pen.goto(0, 260)            # set position for score card
+
+pen.write(" Player A : 0   Player B: 0 ", align= "center", font= ("courier", 24, "normal"))
+
 
 #initialize the main game loop
 while True:
@@ -131,12 +145,20 @@ while True:
 
     # to bounce if hits the right hand limit of window
     if ball.xcor()>390:
+        #revise score
+        score_a += 1
+        pen.clear()         # clear previous result. otherwise write function will overwrite previous results
+        pen.write(" Player A : {}  Player B: {} ".format(score_a, score_b), align= "center", font= ("courier", 24, "normal"))
         # reset ball position and change direction
         ball.goto(0,0)
         ball.dx = ball.dx * -1   
     
     # to bounce if hits the left hand limit of window
     elif ball.xcor()<-390:
+        #revise score
+        score_b += 1
+        pen.clear()
+        pen.write(" Player A : {}  Player B: {} ".format(score_a, score_b), align= "center", font= ("courier", 24, "normal"))
         # reset ball position and change direction
         ball.goto(0,0)
         ball.dx = ball.dx * -1
