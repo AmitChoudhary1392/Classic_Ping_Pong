@@ -1,2 +1,12 @@
 # Classic_Ping_Pong
-Classic Ping Pong Game using Python Turtle Library
+
+>Classic Ping Pong Game using Python and Turtle Graphics.  
+Turtle Graphics is a pre-installed Python library and a trendy way to visualize what programming can do.
+
+> To create the Ping Pong Game using Python and Turtle Graphics, it is divided into following tasks-
+> * ***Task-1:*** Build the game window and initialize the game's main loop.
+> * ***Task-2:*** Create the two paddles and the ball.
+> * ***Task-3:*** Move the paddles with the keyboard and (optional- constrain their movement to fit window)
+> * ***Task-4:*** Move the ball and constrain its movement
+> * ***Task-5:*** Bounce the ball back when it collides with the paddles
+> * ***Task-6:*** Add a scoring system to the game
