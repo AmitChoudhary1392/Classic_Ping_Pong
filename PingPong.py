@@ -60,6 +60,13 @@ ball.color("white")
 ball.penup()
 ### no need to define starting point. Default is (0,0)
 
+# Define ball movement by changes in coordinates
+ball.dx = 0.25
+ball.dy = 0.25      #dx/dy- change in coordinates or turtle will move diagonally in steps
+
+## After defining the movement-- create a loop for continuous travel
+
+
 #Functions for paddle movement
 
 ## Left Paddle
@@ -100,3 +107,25 @@ window.onkeypress(Paddle_R_Down, "Down")
 #initialize the main game loop
 while True:
     window.update()
+
+    ## new coordinates for ball movement 
+    newX = ball.xcor() + ball.dx
+    newY = ball.ycor() + ball.dy
+
+    ball.setx(newX)
+    ball.sety(newY)
+
+    ## Check Borders and define constraints
+
+    ### to bounce back when it hits the top of window
+    if ball.ycor()>290:
+        #set y coordinate to border limit and change direction
+        ball.sety(290)
+        ball.dy = ball.dy * -1
+    
+    ### to bounce back if it hits the bottom of window
+    elif ball.ycor()<-290:
+        #set y coordinate to border limit and change direction
+        ball.sety(-290)
+        ball.dy = ball.dy * -1
+
