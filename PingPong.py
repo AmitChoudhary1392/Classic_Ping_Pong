@@ -60,6 +60,42 @@ ball.color("white")
 ball.penup()
 ### no need to define starting point. Default is (0,0)
 
+#Functions for paddle movement
+
+## Left Paddle
+def Paddle_L_Up():
+    
+    y = Paddle_L.ycor()         # get Y coordinate for paddle
+    y = y + 20                  # new position
+    Paddle_L.sety(y)            # place the paddle at new coordinates
+
+def Paddle_L_Down():
+    
+    y = Paddle_L.ycor()         # get Y coordinate for paddle
+    y = y - 20                  # new position
+    Paddle_L.sety(y)            # place the paddle at new coordinates
+
+## Right Paddle 
+def Paddle_R_Up():
+    
+    y = Paddle_R.ycor()         # get Y coordinate for paddle
+    y = y + 10                  # new position
+    Paddle_R.sety(y)            # place the paddle at new coordinates
+
+def Paddle_R_Down():
+    
+    y = Paddle_R.ycor()         # get Y coordinate for paddle
+    y = y - 10                  # new position
+    Paddle_R.sety(y)            # place the paddle at new coordinates
+
+# Keyboard Binding--- To interact with Keyboard
+
+window.listen()
+window.onkeypress(Paddle_L_Up, "w")         # key press interaction (function call, defined key)
+window.onkeypress(Paddle_L_Down, "s")
+window.onkeypress(Paddle_R_Up, "Up")        # using Arrow keys
+window.onkeypress(Paddle_R_Down, "Down")
+
 
 #initialize the main game loop
 while True:
