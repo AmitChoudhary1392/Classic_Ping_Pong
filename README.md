@@ -14,5 +14,7 @@ Turtle Graphics is a pre-installed Python library and a trendy way to visualize 
 >>![PaddleMove](/Assets/Images/PaddleMove.png)
 >
 > * ***Task-4:*** Move the ball and constrain its movement
+>>![BAllMove](/Assets/Images/BallMove.png)
 > * ***Task-5:*** Bounce the ball back when it collides with the paddles
+>>![BallBounce](/Assets/Images/BallBounce.png)
 > * ***Task-6:*** Add a scoring system to the game
